@@ -22,13 +22,13 @@ public class ToVerifyActivityFeedsStepDef {
     @When("new activity is loaded into the widget titled {string}")
     public void
     new_activity_is_loaded_into_the_widget_titled(String string) {
-//        activityFeedsPage.titleDisplayed(string);
+        activityFeedsPage.titleDisplayed(string);
 
     }
 
     @Then("verify each feed's content")
     public void verify_each_feed_s_content() {
-        activityFeedsPage.iscontentNotBlank();
+       activityFeedsPage.iscontentNotBlank();
     }
 
     @Then("verify the Like icon is displayed")

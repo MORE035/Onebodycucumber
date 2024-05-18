@@ -94,7 +94,13 @@ public class BasePage {
 		return DriverManager.getDriver();
 	}
 	public static WebElement findElementByShadowRootMethod(WebDriver driver, By parentSelector, By childSelector) {
-		SearchContext shadowHost = driver.findElement(parentSelector).getShadowRoot();
+		WebElement parent =driver.findElement(parentSelector);
+		try {
+			Thread.sleep(2000);
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		SearchContext shadowHost = parent.getShadowRoot();
 		return shadowHost.findElement(childSelector);
 	}
 	public static String getTextElementByShadowRoot(WebDriver driver, By parentSelector, By childSelector)  {
