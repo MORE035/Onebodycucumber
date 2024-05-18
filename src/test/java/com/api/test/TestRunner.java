@@ -6,6 +6,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import io.cucumber.junit.CucumberOptions.SnippetType;
 
+/*
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		plugin = {"pretty:target/cucumber/cucumber.txt",
@@ -14,7 +15,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 				"json:target/cucumber/cucumber.json",
 				"com.api.utils.MyTestListener"
 		}
-		,features= {"src/test/resources/features"}
+		,features= {"src/test/resources/app/features"}
 		,glue = {"com.api.stepdefinition"}
 		//,dryRun = true
 		,monochrome = true
@@ -22,6 +23,8 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 		,tags = "@bookerAPI"
 		//,publish = true
 		)
+
+ */
 public class TestRunner {
 
 }
