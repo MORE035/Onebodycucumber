@@ -96,7 +96,7 @@ public class BasePage {
 	public static WebElement findElementByShadowRootMethod(WebDriver driver, By parentSelector, By childSelector) {
 		WebElement parent =driver.findElement(parentSelector);
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -114,6 +114,16 @@ public class BasePage {
 	public static Boolean isDisplayedByShadowRoot(WebDriver driver, By parentSelector, By childSelector) {
 		WebElement element = findElementByShadowRootMethod(driver, parentSelector, childSelector);
 		return element.isDisplayed();
+	}
+
+	public static void scrollBy(WebDriver driver, int x, int y) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(arguments[0], arguments[1]);", x, y);
+	}
+
+	public static String getShadowrootAttribute(WebDriver driver, By parentSelector, By childSelector){
+		WebElement element = findElementByShadowRootMethod(driver, parentSelector, childSelector);
+		return element.getCssValue("color");
 	}
 
 }

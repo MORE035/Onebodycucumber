@@ -1,5 +1,6 @@
 package com.online.stepdefinitions;
 
+import com.online.pages.BasePage;
 import com.online.utils.config.ReadPropertyFileUtils;
 import com.online.utils.driver.Driver;
 import com.online.utils.driver.DriverManager;
@@ -19,6 +20,7 @@ public class Hooks {
 		LOG.info("	Scenario: "+scenario.getName());
 		LOG.info("*****************************************************************************************");
 		Driver.initDriver(ReadPropertyFileUtils.getValue("browser"));
+		BasePage.scrollBy(DriverManager.getDriver(),0,400);
 	}
 	@After
 	public void stop(){
